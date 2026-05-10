@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인사말 — 루민 행정사 사무소</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.greeting-section { padding: 6rem 2rem; }
+.greeting-inner { max-width: 900px; margin: 0 auto; }
+.lumin-brand {
+  text-align: center; margin-bottom: 4rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+.lumin-brand .estd {
+  font-size: 0.85rem; letter-spacing: 4px; color: var(--gray-500);
+  display: block; margin-bottom: 0.25rem;
+}
+.lumin-brand .lumin-en {
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 600; letter-spacing: -2px;
+  color: var(--navy); line-height: 0.9;
+  border-bottom: 2px solid var(--navy); padding-bottom: 0.25rem;
+  display: inline-block;
+}
+.lumin-brand .lumin-en-sub {
+  display: block; font-size: 1rem; letter-spacing: 6px;
+  color: var(--gray-500); margin-top: 0.5rem;
+  font-family: 'Noto Sans KR', sans-serif; font-weight: 300;
+}
+
+.greeting-card {
+  background: var(--off-white);
+  border-radius: 20px;
+  padding: 3.5rem;
+  border-left: 4px solid var(--blue);
+  position: relative;
+}
+.greeting-tag {
+  display: inline-block;
+  background: var(--blue); color: var(--white);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 1px;
+  padding: 0.35rem 1rem; border-radius: 20px;
+  margin-bottom: 2rem;
+}
+.greeting-text p {
+  font-size: 1.05rem; line-height: 2.1;
+  color: var(--gray-700); margin-bottom: 1.4rem;
+}
+.greeting-text p:last-child { margin-bottom: 0; }
+.greeting-sign {
+  margin-top: 2.5rem; padding-top: 2rem;
+  border-top: 1px solid var(--gray-300);
+  font-size: 1rem; color: var(--gray-700);
+}
+.greeting-sign strong {
+  color: var(--navy); font-size: 1.2rem;
+}
+.quote-mark {
+  font-size: 5rem; color: rgba(43,91,168,0.06);
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1; position: absolute;
+  top: 2rem; right: 3rem;
+}
+
+.lang-switcher {
+  display: flex; align-items: center; gap: 4px;
+  margin-left: 1rem;
+}
+.lang-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
+  color: var(--gray-500); padding: 0.2rem 0.4rem;
+  border-radius: 4px; transition: all 0.2s;
+}
+.lang-btn:hover { color: var(--blue); }
+.lang-btn.active { color: var(--blue); background: var(--blue-light); }
+.lang-div { color: var(--gray-300); font-size: 0.7rem; }
+
+.page-hero { margin-top: 72px; }
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <nav class="nav-wrap">
+    <a href="index.html" class="logo-link">
+      <img src="data:image/png;base64,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" alt="루민 행정사 사무소" class="logo-img">
+      <span class="logo-text">루민 행정사 사무소
+        <span class="logo-sub">LUMIN ADMINISTRATIVE OFFICE</span>
+      </span>
+    </a>
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html" data-i18n="nav_home">홈</a></li>
+      <li><a href="greeting.html" class="active" data-i18n="nav_greeting" data-i18n="greet_tag">인사말</a></li>
+      <li><a href="about.html" data-i18n="nav_about">소개</a></li>
+      <li><a href="services.html" data-i18n="nav_services">전문분야</a></li>
+      <li><a href="news.html" data-i18n="nav_news">언론 보도 및 활동</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="nav_contact">문의하기</a></li>
+      <li><a href="location.html" data-i18n="nav_location">오시는 길</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ko" onclick="applyLang('ko')">KO</button>
+      <span class="lang-div">|</span>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+    </div>
+    <button class="mobile-btn" id="mobileBtn"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <p class="page-hero-label" data-i18n="greet_label">GREETING</p>
+  <h1 data-i18n="greet_title">인사말</h1>
+  <div class="page-hero-line"></div>
+</div>
+
+<section class="greeting-section">
+  <div class="greeting-inner">
+    <div class="lumin-brand">
+      <span class="estd">estd 2025</span>
+      <span class="lumin-en">LUMIN</span>
+      <span class="lumin-en-sub">ADMINISTRATIVE OFFICE</span>
+    </div>
+
+    <div class="greeting-card">
+      <div class="quote-mark">"</div>
+      <span class="greeting-tag" data-i18n="greet_tag">인사말</span>
+      <div class="greeting-text">
+        <p data-i18n="g_p1">안녕하십니까. 루민 행정사 사무소를 찾아주셔서 감사합니다.</p>
+        <p data-i18n="g_p2">저는 30여 년간 교육행정기관에서 관리직으로 근무하며 다양한 민원과 행정 절차를 직접 경험하였습니다.</p>
+        <p data-i18n="g_p3">그 노하우를 바탕으로 고객 한 분 한 분의 입장에서 고민을 듣고, 가장 합리적이고 신속한 해결 방안을 제시하고자 합니다.</p>
+        <p data-i18n="g_p4">비영리법인설립, 행정심판, 학교폭력, 외국인 비자, 각종 인허가 등 복잡한 절차도 편안하게 맡기실 수 있도록 친절하고 책임 있는 서비스를 제공할 것을 약속하겠습니다.</p>
+      </div>
+      <div class="greeting-sign" data-i18n="g_sign">루민 행정사 사무소 · 대표행정사 강현선</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-wrap">
+    <div>
+      <div class="footer-logo">루민 행정사 사무소</div>
+      <div>대표자 : 강현선 &nbsp;|&nbsp; 사업자등록번호 : 273-07-03434</div>
+      <div>인천시 서구 서곶로 50, 판매2동 2층 B202호 (루원시티 대성베르힐 더센트로)</div>
+      <div>전화 : 032-575-7036 &nbsp;|&nbsp; 팩스 : 032-575-7038 &nbsp;|&nbsp; luminadmin@naver.com</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 LUMIN Administrative Office. All rights reserved.</span>
+    <div class="footer-links"><a href="#" data-i18n="footer_terms">이용약관</a><a href="#" data-i18n="footer_privacy">개인정보처리방침</a></div>
+  </div>
+</footer>
+
+<script>
+
+/* ── i18n 번역 데이터 ── */
+const TRANS = {
+  ko: {
+    // nav
+    nav_home: '홈', nav_greeting: '인사말', nav_about: '소개',
+    nav_services: '전문분야', nav_news: '언론 보도 및 활동',
+    nav_contact: '문의하기', nav_location: '오시는 길',
+    // footer
+    footer_ceo: '대표자', footer_biz: '사업자등록번호',
+    footer_tel: '전화', footer_fax: '팩스',
+    footer_terms: '이용약관', footer_privacy: '개인정보처리방침',
+    footer_copy: '© 2025 LUMIN Administrative Office. All rights reserved.',
+    // home hero
+    hero_sub: 'LUMIN ADMINISTRATIVE OFFICE',
+    hero_cta1: '무료 상담 신청', hero_cta2: '전문분야 보기',
+    hero_scroll: 'SCROLL',
+    // home services
+    svc_label: 'SERVICES', svc_title: '전문 분야별 서비스',
+    svc1_name: '비영리법인 설립', svc1_desc: '공익활동을 위한 비영리법인, 까다로운 설립 절차를 전문적으로 지원합니다.',
+    svc2_name: '행정심판', svc2_desc: '억울한 행정처분, 경험과 전문성을 바탕으로 권익 회복을 돕습니다.',
+    svc3_name: '외국인 업무', svc3_desc: '체류자격 변경·연장, 영주권 신청 등 모든 출입국 업무를 처리합니다.',
+    svc4_name: '각종 인·허가', svc4_desc: '사업 인허가 절차, 꼼꼼한 대행으로 성공 가능성을 높여드립니다.',
+    svc5_name: '학교폭력 이의신청·구제', svc5_desc: '학교폭력 사건, 학생과 학부모의 권익을 지켜드립니다.',
+    svc6_name: '법무 상담', svc6_desc: '행정업무와 관련된 법적 문제에 대한 전문적인 상담과 해결방안을 제시해드립니다.',
+    svc_more: '전문분야 자세히 보기',
+    // home why
+    why_label: 'WHY LUMIN', why_title: '루민이 다릅니다',
+    why1_val: '30+', why1_label: '년간 행정 경력',
+    why2_val: '6개', why2_label: '전문 분야',
+    why3_val: '무료', why3_label: '초회 상담',
+    why4_val: '1:1', why4_label: '맞춤형 서비스',
+      // greeting 페이지
+      greet_label: 'GREETING',
+      greet_title: '인사말',
+      greet_tag: '인사말',
+      g_p1: '안녕하십니까. 루민 행정사 사무소를 찾아주셔서 감사합니다.',
+      g_p2: '저는 30여 년간 교육행정기관에서 관리직으로 근무하며 다양한 민원과 행정 절차를 직접 경험하였습니다.',
+      g_p3: '그 노하우를 바탕으로 고객 한 분 한 분의 입장에서 고민을 듣고, 가장 합리적이고 신속한 해결 방안을 제시하고자 합니다.',
+      g_p4: '비영리법인설립, 행정심판, 학교폭력, 외국인 비자, 각종 인허가 등 복잡한 절차도 편안하게 맡기실 수 있도록 친절하고 책임 있는 서비스를 제공할 것을 약속하겠습니다.',
+      g_sign: '루민 행정사 사무소 · 대표행정사 강현선',
+  },
+  en: {
+    // nav
+    nav_home: 'Home', nav_greeting: 'Greeting', nav_about: 'About',
+    nav_services: 'Services', nav_news: 'News & Activities',
+    nav_contact: 'Contact', nav_location: 'Location',
+    // footer
+    footer_ceo: 'CEO', footer_biz: 'Business Reg.',
+    footer_tel: 'Tel', footer_fax: 'Fax',
+    footer_terms: 'Terms of Use', footer_privacy: 'Privacy Policy',
+    footer_copy: '© 2025 LUMIN Administrative Office. All rights reserved.',
+    // home hero
+    hero_sub: 'LUMIN ADMINISTRATIVE OFFICE',
+    hero_cta1: 'Free Consultation', hero_cta2: 'View Services',
+    hero_scroll: 'SCROLL',
+    // home services
+    svc_label: 'SERVICES', svc_title: 'Professional Services',
+    svc1_name: 'Non-Profit Corporation Setup', svc1_desc: 'Expert support for the complex process of establishing a non-profit corporation for public benefit.',
+    svc2_name: 'Administrative Appeals', svc2_desc: 'We help restore your rights based on experience and expertise against unfair administrative dispositions.',
+    svc3_name: 'Foreign Nationals\' Affairs', svc3_desc: 'We handle all immigration matters including residence status changes, extensions, and permanent residency applications.',
+    svc4_name: 'Permits & Licenses', svc4_desc: 'We increase your chances of success through thorough representation in business permit and licensing procedures.',
+    svc5_name: 'School Violence Relief', svc5_desc: 'We protect the rights of students and parents in school violence cases.',
+    svc6_name: 'Legal Consultation', svc6_desc: 'Professional consultation and solutions for legal issues related to administrative affairs.',
+    svc_more: 'View All Services',
+    // home why
+    why_label: 'WHY LUMIN', why_title: 'Why Choose LUMIN',
+    why1_val: '30+', why1_label: 'Years of Experience',
+    why2_val: '6', why2_label: 'Practice Areas',
+    why3_val: 'Free', why3_label: 'First Consultation',
+    why4_val: '1:1', why4_label: 'Personalized Service',
+      // greeting 페이지
+      greet_label: 'GREETING',
+      greet_title: 'Greeting',
+      greet_tag: 'Greeting',
+      g_p1: 'Thank you for visiting LUMIN Administrative Office.',
+      g_p2: 'Over the past 30 years, I have directly experienced diverse civil affairs and administrative procedures while serving as an administrative manager at an educational government institution.',
+      g_p3: "Drawing on that expertise, I strive to listen to each client's concerns and offer the most reasonable and prompt solutions.",
+      g_p4: 'I promise to provide kind and responsible service so that you can comfortably entrust us with complex procedures — including non-profit incorporation, administrative appeals, school violence cases, foreign visas, and various permits.',
+      g_sign: 'LUMIN Administrative Office · Chief Administrative Officer Kang Hyeon-seon',
+  }
+};
+
+/* ── 언어 전환 ── */
+let currentLang = sessionStorage.getItem('lang') || 'ko';
+
+function applyLang(lang) {
+  currentLang = lang;
+  sessionStorage.setItem('lang', lang);
+  const t = TRANS[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+  // 버튼 활성화 표시
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  // html lang 속성
+  document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyLang(currentLang);
+});
+
+
+
+</script>
+<script>
+const header = document.getElementById('header');
+document.getElementById('mobileBtn').addEventListener('click', () => {
+  document.getElementById('navList').classList.toggle('open');
+});
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10));
+</script>
+</body>
+</html>
