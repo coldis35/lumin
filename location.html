@@ -34,9 +34,9 @@
   <div class="lc">
     <div class="ic addr-card">
       <div class="ic-h"><span>📍</span><span data-ko="사무소 위치" data-en="Office Address">사무소 위치</span></div>
-      <p><strong data-ko="인천시 서구 서곶로 50" data-en="50 Seogollo, Seo-gu, Incheon">인천시 서구 서곶로 50</strong><br>
+      <p><strong data-ko="인천시 서구 서곶로 50" data-en="50, Seogot-ro, Seo-gu, Incheon">인천시 서구 서곶로 50</strong><br>
       <span data-ko="판매2동 2층 B202호" data-en="2F, Room B202">판매2동 2층 B202호</span><br>
-      <span data-ko="(루원시티 대성베르힐 더센트로)" data-en="(Luwon City Daesung Berhill The Sentro)">(루원시티 대성베르힐 더센트로)</span></p>
+      <span data-ko="(루원시티 대성베르힐 더센트로)" data-en="(Lu1 City Daesung Berhill The Centro)">(루원시티 대성베르힐 더센트로)</span></p>
       <button class="copy-btn" onclick="copyAddr()" data-ko="📋 주소 복사" data-en="📋 Copy Address">📋 주소 복사</button>
     </div>
     <div class="ic">
@@ -67,7 +67,7 @@ document.documentElement.lang=lang==='ko'?'ko':'en';}
 document.addEventListener('DOMContentLoaded',function(){setLang(_lang);});
 function copyAddr(){
   var ko='인천시 서구 서곶로 50, 판매2동 2층 B202호 (루원시티 대성베르힐 더센트로)';
-  var en='50 Seogollo, Seo-gu, Incheon, 2F Room B202 (Luwon City Daesung Berhill The Sentro)';
+  var en='50, Seogot-ro, Seo-gu, Incheon, 2F Room B202 (Lu1 City Daesung Berhill The Centro)';
   navigator.clipboard.writeText(_lang==='en'?en:ko);
   alert(_lang==='en'?'Address copied!':'주소가 복사되었습니다!');
 }
