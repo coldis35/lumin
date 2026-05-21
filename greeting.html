@@ -63,22 +63,27 @@
   top: 2rem; right: 3rem;
 }
 
-.lang-switcher {
-  display: flex; align-items: center; gap: 4px;
-  margin-left: 1rem;
-}
-.lang-btn {
-  background: none; border: none; cursor: pointer;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
-  color: var(--gray-500); padding: 0.2rem 0.4rem;
-  border-radius: 4px; transition: all 0.2s;
-}
-.lang-btn:hover { color: var(--blue); }
-.lang-btn.active { color: var(--blue); background: var(--blue-light); }
 .lang-div { color: var(--gray-300); font-size: 0.7rem; }
 
 .page-hero { margin-top: 72px; }
+
+/* ── nav 위치 고정 ── */
+.nav-wrap{display:flex;align-items:center;height:72px;padding:0 2rem;max-width:1200px;margin:0 auto}
+.logo-link{flex-shrink:0}
+.nav-list{display:flex;align-items:center;gap:0;list-style:none;flex:1;justify-content:center}
+.nav-list a{white-space:nowrap;padding:0 0.9rem;height:72px;line-height:72px;display:block;font-size:.9rem;font-weight:500;color:var(--gray-700);transition:color .3s;position:relative;text-decoration:none}
+.nav-list a::after{content:'';position:absolute;bottom:0;left:.9rem;right:.9rem;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s}
+.nav-list a:hover,.nav-list a.active{color:var(--blue)}
+.nav-list a:hover::after,.nav-list a.active::after{transform:scaleX(1)}
+.nav-cta{flex-shrink:0;margin-left:0;background:var(--blue)!important;color:var(--white)!important;padding:0 1.2rem!important;height:38px!important;line-height:38px!important;border-radius:20px!important;font-size:.85rem!important;transition:background .3s,transform .3s!important;white-space:nowrap}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--navy)!important;transform:translateY(-1px)!important}
+.lang-sw{display:flex;align-items:center;gap:4px;flex-shrink:0;margin-left:1rem;width:4.5rem;justify-content:center;position:relative;z-index:10}
+.lang-btn{background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;color:var(--gray-500);padding:.2rem 0;border-radius:4px;transition:color .2s;width:1.8rem;text-align:center}
+.lang-btn:hover{color:var(--blue)}
+.lang-btn.active{color:var(--blue)}
+.lang-div{color:var(--gray-300);font-size:.65rem}
+
 </style>
 </head>
 <body>
@@ -100,7 +105,7 @@
       <li><a href="contact.html" class="nav-cta" data-i18n="nav_contact">문의하기</a></li>
       <li><a href="location.html" data-i18n="nav_location">오시는 길</a></li>
     </ul>
-    <div class="lang-switcher">
+    <div class="lang-sw">
       <button class="lang-btn active" data-lang="ko" onclick="applyLang('ko')">KO</button>
       <span class="lang-div">|</span>
       <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
@@ -132,7 +137,7 @@
         <p data-i18n="g_p3" data-ko="30년이라는 긴 시간 동안 교육행정 분야에서 체득한 전문성은 저희의 가장 큰 자산입니다. 이 소중한 경험을 바탕으로 법인 및 조합 설립부터 까다로운 행정기관 인허가 등록, 그리고 권익 보호를 위한 행정처분 대응까지 모든 과정을 내 일처럼 꼼꼼하게 챙기겠습니다." data-en="The expertise accumulated over 30 years in educational administration is our greatest asset. Drawing on this invaluable experience, we will handle every step with meticulous care — as if it were our own matter — from corporate and cooperative establishment to complex government licensing and registration, and administrative disposition response to protect your rights.">30년이라는 긴 시간 동안 교육행정 분야에서 체득한 전문성은 저희의 가장 큰 자산입니다. 이 소중한 경험을 바탕으로 법인 및 조합 설립부터 까다로운 행정기관 인허가 등록, 그리고 권익 보호를 위한 행정처분 대응까지 모든 과정을 내 일처럼 꼼꼼하게 챙기겠습니다.</p>
         <p data-i18n="g_p4" data-ko="특히 외국인 체류 비자 문제처럼 세심한 주의가 필요한 부분도 놓치지 않고 끝까지 책임감 있게 함께하겠습니다. 처음부터 끝까지 믿고 맡길 수 있는 든든한 행정 파트너, 루민이 늘 고객님의 곁에서 힘이 되어드리겠습니다. 감사합니다" data-en="We will also handle matters requiring special care — such as foreign residency visa issues — responsibly and attentively from start to finish. LUMIN is the reliable administrative partner you can trust completely — always by your side, ready to support you every step of the way. Thank you.">특히 외국인 체류 비자 문제처럼 세심한 주의가 필요한 부분도 놓치지 않고 끝까지 책임감 있게 함께하겠습니다. 처음부터 끝까지 믿고 맡길 수 있는 든든한 행정 파트너, 루민이 늘 고객님의 곁에서 힘이 되어드리겠습니다. 감사합니다</p>
       </div>
-      <div class="greeting-sign" data-i18n="g_sign" data-ko="루민 행정사 사무소 · 대표행정사 강현선" data-en="LUMIN Administrative Office · Chief Administrative Officer Kang Hyeon-seon">루민 행정사 사무소 · 대표행정사 강현선</div>
+      <div class="greeting-sign" data-i18n="g_sign" data-ko="루민 행정사 사무소 · 대표행정사 강현선" data-en="LUMIN Administrative Office · Chief Administrative Attorney Kang Hyeon-seon">루민 행정사 사무소 · 대표행정사 강현선</div>
     </div>
   </div>
 </section>
@@ -238,7 +243,7 @@ const TRANS = {
       g_p2: 'We understand the sense of helplessness you may feel when facing permit preparations for a new business, an unexpected and unjust administrative disposition, or unfamiliar foreign residency visa matters. LUMIN strives to be a warm and supportive partner, helping you navigate complex administrative procedures with greater ease and confidence.',
       g_p3: "Drawing on that expertise, I strive to listen to each client's concerns and offer the most reasonable and prompt solutions.",
       g_p4: 'We will also handle matters requiring special care — such as foreign residency visa issues — responsibly and attentively from start to finish. LUMIN is the reliable administrative partner you can trust completely — always by your side, ready to support you every step of the way. Thank you.',
-      g_sign: 'LUMIN Administrative Office · Chief Administrative Officer Kang Hyeon-seon',
+      g_sign: 'LUMIN Administrative Office · Chief Administrative Attorney Kang Hyeon-seon',
   }
 };
 

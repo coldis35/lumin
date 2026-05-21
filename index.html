@@ -161,19 +161,6 @@
   .why-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.lang-switcher {
-  display: flex; align-items: center; gap: 4px;
-  margin-left: 1rem;
-}
-.lang-btn {
-  background: none; border: none; cursor: pointer;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
-  color: var(--gray-500); padding: 0.2rem 0.4rem;
-  border-radius: 4px; transition: all 0.2s;
-}
-.lang-btn:hover { color: var(--blue); }
-.lang-btn.active { color: var(--blue); background: var(--blue-light); }
 .lang-div { color: var(--gray-300); font-size: 0.7rem; }
 
 
@@ -200,6 +187,24 @@
   background: rgba(255,255,255,0.15);
   transform: translateY(-2px);
 }
+
+/* ── nav 위치 고정 ── */
+.nav-wrap{display:flex;align-items:center;height:72px;padding:0 2rem;max-width:1200px;margin:0 auto}
+.logo-link{flex-shrink:0}
+.nav-list{display:flex;align-items:center;gap:0;list-style:none;flex:1;justify-content:center}
+.nav-list a{white-space:nowrap;padding:0 0.9rem;height:72px;line-height:72px;display:block;font-size:.9rem;font-weight:500;color:var(--gray-700);transition:color .3s;position:relative;text-decoration:none}
+.nav-list a::after{content:'';position:absolute;bottom:0;left:.9rem;right:.9rem;height:2px;background:var(--blue);transform:scaleX(0);transition:transform .3s}
+.nav-list a:hover,.nav-list a.active{color:var(--blue)}
+.nav-list a:hover::after,.nav-list a.active::after{transform:scaleX(1)}
+.nav-cta{flex-shrink:0;margin-left:0;background:var(--blue)!important;color:var(--white)!important;padding:0 1.2rem!important;height:38px!important;line-height:38px!important;border-radius:20px!important;font-size:.85rem!important;transition:background .3s,transform .3s!important;white-space:nowrap}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--navy)!important;transform:translateY(-1px)!important}
+.lang-sw{display:flex;align-items:center;gap:4px;flex-shrink:0;margin-left:1rem;width:4.5rem;justify-content:center;position:relative;z-index:10}
+.lang-btn{background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;color:var(--gray-500);padding:.2rem 0;border-radius:4px;transition:color .2s;width:1.8rem;text-align:center}
+.lang-btn:hover{color:var(--blue)}
+.lang-btn.active{color:var(--blue)}
+.lang-div{color:var(--gray-300);font-size:.65rem}
+
 </style>
 </head>
 <body>
@@ -222,7 +227,7 @@
       <li><a href="location.html" data-i18n="nav_location">오시는 길</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:0.5rem">
-      <div class="lang-switcher">
+      <div class="lang-sw">
         <button class="lang-btn active" data-lang="ko" onclick="applyLang('ko')">KO</button>
         <span class="lang-div">|</span>
         <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
@@ -348,6 +353,9 @@ const TRANS = {
       footer_ceo: '대표자', footer_biz: '사업자등록번호',
       footer_tel: '전화', footer_fax: '팩스',
       hero_title: '루민 행정사 사무소',
+      hero_sub: 'LUMIN ADMINISTRATIVE OFFICE',
+      hero_cta1: '무료 상담 신청',
+      hero_cta2: '전문분야 보기',
       svc_title: '전문 분야별 서비스',
       svc1_name: '출입국 체류비자 민원대행',
       svc1_desc: '비자 변경·연장, 영주권·귀화 신청 등 복잡한 출입국 민원 절차를 처음부터 끝까지 함께합니다.',
